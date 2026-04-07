@@ -4,9 +4,16 @@
 \alias{mobforest.output}
 \title{Model-based random forest object}
 \usage{
-mobforest.output(oob_predictions, general_predictions,
-  new_data_predictions, varimp_object, model_used, family, train_response,
-  new_response = data.frame(matrix(0, 0, 0)))
+mobforest.output(
+  oob_predictions,
+  general_predictions,
+  new_data_predictions,
+  varimp_object,
+  model_used,
+  family,
+  train_response,
+  new_response = data.frame(matrix(0, 0, 0))
+)
 }
 \arguments{
 \item{oob_predictions}{Predictions on out-of-bag data.}

@@ -4,9 +4,15 @@
 \alias{prediction.output}
 \title{Predictions and predictive accuracy estimates}
 \usage{
-prediction.output(pred_mean = numeric(), pred_sd = numeric(),
-  residual = numeric(), R2_or_acc = numeric(), mse = numeric(),
-  overall_r2_or_acc = numeric(), pred_type = character())
+prediction.output(
+  pred_mean = numeric(),
+  pred_sd = numeric(),
+  residual = numeric(),
+  R2_or_acc = numeric(),
+  mse = numeric(),
+  overall_r2_or_acc = numeric(),
+  pred_type = character()
+)
 }
 \arguments{
 \item{pred_mean}{Mean predictions across trees.}

@@ -4,8 +4,7 @@
 \alias{predictive.acc}
 \title{Predictive performance across all trees}
 \usage{
-predictive.acc(object = "mfOutput", newdata = F, prob_cutoff = NULL,
-  plot = T)
+predictive.acc(object = "mfOutput", newdata = F, prob_cutoff = NULL, plot = T)
 }
 \arguments{
 \item{object}{An object of class \code{mobforest.output}}

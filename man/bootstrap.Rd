@@ -5,8 +5,19 @@
 \title{This method computes predicted outcome for each observation in the data
 frame using the tree model supplied as an input argument.}
 \usage{
-bootstrap(i, data, main_model, partition_vars, mtry, new_test_data,
-  mobforest_controls, fraction, model, family, prob_cutoff = 0.5)
+bootstrap(
+  i,
+  data,
+  main_model,
+  partition_vars,
+  mtry,
+  new_test_data,
+  mobforest_controls,
+  fraction,
+  model,
+  family,
+  prob_cutoff = 0.5
+)
 }
 \arguments{
 \item{i}{the tree}
@@ -28,7 +39,8 @@ mobforest.analysis}
 \item{fraction}{number of observations to draw without replacement (only
 relevant if replace = FALSE)}
 
-\item{model}{A model of class \code{"\link[=StatModel-class]{StatModel}"}
+\item{model}{A model of class
+\code{\link[modeltools:StatModel-class]{StatModel-class}}
 used for fitting observations in current node. This parameter allows
 fitting a linear model or generalized linear model with formula y ~ x_1 +
 ... + x_k. The Parameter "linearModel" fits linear model. The parameter

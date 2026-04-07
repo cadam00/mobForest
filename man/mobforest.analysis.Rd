@@ -4,11 +4,18 @@
 \alias{mobforest.analysis}
 \title{Model-based random forest analysis}
 \usage{
-mobforest.analysis(formula, partition_vars, data,
+mobforest.analysis(
+  formula,
+  partition_vars,
+  data,
   mobforest_controls = mobforest.control(),
-  new_test_data = as.data.frame(matrix(0, 0, 0)), processors = 1,
-  model = linearModel, family = NULL, prob_cutoff = 0.5,
-  seed = sample(1:1e+07, 1))
+  new_test_data = as.data.frame(matrix(0, 0, 0)),
+  processors = 1,
+  model = linearModel,
+  family = NULL,
+  prob_cutoff = 0.5,
+  seed = sample(1:1e+07, 1)
+)
 }
 \arguments{
 \item{formula}{An object of class formula specifying the model. This should
@@ -24,7 +31,7 @@ forest.}
 
 \item{mobforest_controls}{An object of class
 \code{"\linkS4class{mobforest.control}"} returned by
-\link[=mobforest.control]{mobforest.control()}, that contains parameters
+\link{mobforest.control}, that contains parameters
 controlling the construction of random forest.}
 
 \item{new_test_data}{A data frame representing test data for validating
@@ -33,7 +40,8 @@ random forest model. This data is not used in in tree building process.}
 \item{processors}{A number of processors/cores on your computer that should
 be used for parallel computation.}
 
-\item{model}{A model of class \code{"\link[=StatModel-class]{StatModel}"}
+\item{model}{A model of class
+\code{"\link[modeltools:StatModel-class]{StatModel}"}
 used for fitting observations in current node. This parameter allows
 fitting a linear model or generalized linear model with formula y ~ x_1 +
 ... + x_k. The Parameter "linearModel" fits linear model. The parameter
@@ -58,7 +66,7 @@ considered).}
 
 \item{seed}{Since this function uses parallel processes,
 to replicate results, set the cluster
-\code{"\link[=clusterSetRNGStream]{clusterSetRNGStream()}"} seed.}
+\code{"\link[parallel:clusterSetRNGStream]{clusterSetRNGStream}"} seed.}
 }
 \value{
 An object of class \code{\linkS4class{mobforest.output}}.
@@ -94,7 +102,7 @@ BostonHousing <- BostonHousing[1:90, c("rad", "tax", "crim", "medv", "lstat")]
 # Recursive partitioning based on linear regression model medv ~ lstat with 3
 # trees.  1 core/processor used. 
 rfout <- mobforest.analysis(as.formula(medv ~ lstat), c("rad", "tax", "crim"),
-    mobforest_controls = mobforest.control(ntree = 3, mtry = 2, replace = TRUE,
+   mobforest_controls = mobforest.control(ntree = 3, mtry = 2, replace = TRUE,
         alpha = 0.05, bonferroni = TRUE, minsplit = 25), data = BostonHousing,
     processors = 1, model = linearModel, seed = 1111)
 \dontrun{
@@ -117,6 +125,6 @@ and regression trees, bagging, and random forests, \emph{Psychol Methods},
 14, 323-348.\cr
 }
 \seealso{
-\link[=mobforest.control]{mobforest.control()},
+\link{mobforest.control},
 \code{\link{mobforest.output-class}}
 }

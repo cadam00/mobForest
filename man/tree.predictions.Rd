@@ -12,7 +12,7 @@ tree.predictions(j, df, tree)
 \item{df}{A data frame containing the variables in the model.}
 
 \item{tree}{An object of class mob inheriting from
-\code{\linkS4class{BinaryTree}}}
+\code{\link[party:BinaryTree-class]{BinaryTree-class}}}
 }
 \value{
 A vector of predicted outcome

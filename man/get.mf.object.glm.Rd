@@ -4,8 +4,16 @@
 \alias{get.mf.object.glm}
 \title{Fit a general linear model to a mobForest model}
 \usage{
-get.mf.object.glm(object, main_model, partition_vars, data, new_test_data,
-  ntree, family, prob_cutoff = 0.5)
+get.mf.object.glm(
+  object,
+  main_model,
+  partition_vars,
+  data,
+  new_test_data,
+  ntree,
+  family,
+  prob_cutoff = 0.5
+)
 }
 \arguments{
 \item{object}{A bootstrap model object created by

@@ -4,10 +4,20 @@
 \alias{mobforest.control}
 \title{Control parameters for random forest}
 \usage{
-mobforest.control(ntree = 300, mtry = 0, replace = FALSE,
-  fraction = 0.632, alpha = 1, bonferroni = FALSE, minsplit = 20,
-  trim = 0.1, objfun = deviance, breakties = FALSE, parm = NULL,
-  verbose = FALSE)
+mobforest.control(
+  ntree = 300,
+  mtry = 0,
+  replace = FALSE,
+  fraction = 0.632,
+  alpha = 1,
+  bonferroni = FALSE,
+  minsplit = 20,
+  trim = 0.1,
+  objfun = deviance,
+  breakties = FALSE,
+  parm = NULL,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{ntree}{Number of trees to be constructed in forest (default = 300).}
@@ -23,24 +33,28 @@ relevant if replace = FALSE).}
 
 \item{alpha}{A node is considered for splitting if the p value for any
 partitioning variable in that node falls below alpha (default 0.05).
-Please see \link[=mob_control]{mob_control()}.}
+Please see \link[party:mob_control]{mob_control()}.}
 
 \item{bonferroni}{logical. Should p values be Bonferroni corrected?
-(default TRUE). Please see \link[=mob_control]{mob_control()}.}
+(default TRUE). Please see \link[party:mob_control]{mob_control()}.}
 
 \item{minsplit}{An integer. The minimum number of observations in a node
-(default 20). Please see \link[=mob_control]{mob_control()}.}
+(default 20). Please see \link[party:mob_control]{mob_control()}.}
 
-\item{trim}{A numeric, as defined in \link[=mob_control]{mob_control()}.}
+\item{trim}{A numeric, as defined in
+\link[party:mob_control]{mob_control()}.}
 
-\item{objfun}{A function, as defined in \link[=mob_control]{mob_control()}.}
+\item{objfun}{A function, as defined in
+\link[party:mob_control]{mob_control()}.}
 
-\item{breakties}{A logical, as defined in \link[=mob_control]{mob_control()}.}
+\item{breakties}{A logical, as defined in
+\link[party:mob_control]{mob_control()}.}
 
 \item{parm}{A numeric or vector, as defined in
-\link[=mob_control]{mob_control()}.}
+\link[party:mob_control]{mob_control()}.}
 
-\item{verbose}{A logical, as defined in \link[=mob_control]{mob_control()}.}
+\item{verbose}{A logical, as defined in
+\link[party:mob_control]{mob_control()}.}
 }
 \value{
 An object of class \code{\linkS4class{mobforest.control}}.
@@ -50,9 +64,9 @@ Various parameters that control the forest growing.
 }
 \details{
 This function is used to set up forest controls. The mob_control (from
-party 'package') object is used to set up control parameters for single
+party package) object is used to set up control parameters for single
 tree model.
-For most parameters, please see: \link[=mob_control]{mob_control()}
+For most parameters, please see: \link[party:mob_control]{mob_control()}
 }
 \examples{
 # create forest controls before starting random forest analysis
@@ -63,5 +77,5 @@ mobforest_control = mobforest.control(ntree = 400, mtry = 4, replace = TRUE,
 \references{
 Achim Zeileis, Torsten Hothorn, and Kurt Hornik (2008).
 Model-Based Recursive Partitioning. \emph{Journal of Computational and
-Graphical Statistics}, 17(2), 492-514.\cr
+Graphical Statistics}, 17(2), 492–514.\cr
 }

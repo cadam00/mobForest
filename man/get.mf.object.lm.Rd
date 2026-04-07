@@ -4,8 +4,15 @@
 \alias{get.mf.object.lm}
 \title{Fit a linear model to a mobForest model}
 \usage{
-get.mf.object.lm(object, main_model, partition_vars, data, new_test_data,
-  ntree, family)
+get.mf.object.lm(
+  object,
+  main_model,
+  partition_vars,
+  data,
+  new_test_data,
+  ntree,
+  family
+)
 }
 \arguments{
 \item{object}{A bootstrap model object created by \link[=bootstrap]{bootstrap()}}

@@ -1,8 +1,8 @@
 #' Model based recursive partitioning - randomized subset of partition variables
 #' considered during each split. 
 #' 
-#' The \link[=mob]{mob} function in party package is modified so that a random
-#' subset of predictor variables are considered during each split. mtry
+#' The \link[party:mob]{mob} function in the party package is modified so that a
+#' random subset of predictor variables are considered during each split. mtry
 #' represents the number of predictor variables to be considered during each
 #' split.
 #' @param main_model A model in character format
@@ -10,25 +10,27 @@
 #' @param mtry A Random subset of partition variables to be considered at each
 #' node of decision tree
 #' @param weights An optional vector of weights, as described in
-#' \link[=mob]{mob}
+#'   \link[party:mob]{mob}
 #' @param data A data frame containing the variables in the model.
 #' @param na.action A function which indicates what should happen when the
-#' data contain NAs, as described in \link[=mob]{mob}
-#' @param model A model of class \code{\linkS4class{StatModel}}
+#'   data contain NAs, as described in \link[party:mob]{mob}
+#' @param model A model of class
+#'   \code{\link[modeltools:StatModel-class]{StatModel-class}}
 #' @param control A list with control parameters as returned by
-#' \link[=mob_control]{mob_control}
+#'   \link[party:mob_control]{mob_control}
 #' @param \dots Additional arguments passed to the fit call for the model.
 #' @return An object of class mob inheriting from
-#' \code{\linkS4class{BinaryTree}}. Every node of the tree is additionally
-#' associated with a fitted model.
+#'   \code{\link[party:BinaryTree-class]{BinaryTree-class}}.
+#'   Every node of the tree is additionally associated with a fitted model.
 #' @references Achim Zeileis, Torsten Hothorn, and Kurt Hornik (2008).
 #' Model-Based Recursive Partitioning. \emph{Journal of Computational and
-#' Graphical Statistics}, 17(2), 492-514.\cr
+#' Graphical Statistics}, 17(2), 492–514.\cr
 #' @importFrom modeltools ParseFormula glinearModel dpp dimension fit na.omit
 #' @importFrom party reweight
 #' @importFrom stats formula as.formula
 #' @importFrom methods new
 #' @export
+
 mob.rf.tree <- function(main_model, partition_vars, mtry, weights,
                         data = list(), na.action = na.omit,
                         model = glinearModel, control = mob_control(), ...) {

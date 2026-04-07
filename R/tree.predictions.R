@@ -6,9 +6,9 @@
 #' @param j the observation
 #' @param df A data frame containing the variables in the model.
 #' @param tree An object of class mob inheriting from
-#' \code{\linkS4class{BinaryTree}}
+#'   \code{\link[party:BinaryTree-class]{BinaryTree-class}}
 #' @return A vector of predicted outcome
-#' 
+#'
 #' @examples
 #' library(mlbench)
 #' set.seed(1111)
@@ -21,11 +21,12 @@
 #'                      model = linearModel)
 #' tree.predictions(j = 1, df = data, tree = fmBH@tree)
 #'
+#' @importFrom methods is
 #' @export
 tree.predictions <- function(j, df, tree) {
   while (tree$terminal == FALSE) {
     newvar <- tree$psplit$variableName
-    if (class(tree$psplit) == "nominalSplit") {
+    if (is(tree$psplit, "nominalSplit")) {
       left_split_vars <-
         levels(tree$psplit$splitpoint)[as.logical(tree$psplit$splitpoint)]
       if (!is.na(match(as.character(df[j, newvar]), left_split_vars))){

@@ -28,13 +28,14 @@
 #' forest.
 #' @param mobforest_controls An object of class
 #' \code{"\linkS4class{mobforest.control}"} returned by
-#' \link[=mobforest.control]{mobforest.control()}, that contains parameters
+#' \link{mobforest.control}, that contains parameters
 #' controlling the construction of random forest.
 #' @param new_test_data A data frame representing test data for validating
 #' random forest model. This data is not used in in tree building process.
 #' @param processors A number of processors/cores on your computer that should
 #' be used for parallel computation.
-#' @param model A model of class \code{"\link[=StatModel-class]{StatModel}"}
+#' @param model A model of class
+#' \code{"\link[modeltools:StatModel-class]{StatModel}"}
 #' used for fitting observations in current node. This parameter allows
 #' fitting a linear model or generalized linear model with formula y ~ x_1 +
 #' ... + x_k. The Parameter "linearModel" fits linear model. The parameter
@@ -56,9 +57,9 @@
 #' considered).
 #' @param seed Since this function uses parallel processes,
 #' to replicate results, set the cluster
-#' \code{"\link[=clusterSetRNGStream]{clusterSetRNGStream()}"} seed.
+#' \code{"\link[parallel:clusterSetRNGStream]{clusterSetRNGStream}"} seed.
 #' @return An object of class \code{\linkS4class{mobforest.output}}.
-#' @seealso \link[=mobforest.control]{mobforest.control()},
+#' @seealso \link{mobforest.control},
 #' \code{\link{mobforest.output-class}}
 #' @references Achim Zeileis, Torsten Hothorn, and Kurt Hornik (2008).
 #' Model-Based Recursive Partitioning. \emph{Journal of Computational and
@@ -83,7 +84,7 @@
 #' # Recursive partitioning based on linear regression model medv ~ lstat with 3
 #' # trees.  1 core/processor used. 
 #' rfout <- mobforest.analysis(as.formula(medv ~ lstat), c("rad", "tax", "crim"),
-#'     mobforest_controls = mobforest.control(ntree = 3, mtry = 2, replace = TRUE,
+#'    mobforest_controls = mobforest.control(ntree = 3, mtry = 2, replace = TRUE,
 #'         alpha = 0.05, bonferroni = TRUE, minsplit = 25), data = BostonHousing,
 #'     processors = 1, model = linearModel, seed = 1111)
 #' \dontrun{
@@ -95,6 +96,7 @@
 #' @importFrom modeltools linearModel
 #' @importFrom stats as.formula
 #' @export
+
 mobforest.analysis <-
   function(formula, partition_vars, data,
            mobforest_controls = mobforest.control(),

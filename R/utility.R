@@ -2,10 +2,11 @@
 #' @param node see party package
 #' @param mf see party package
 #' @param weights see party package
+#' @importFrom methods is
 mob_fit_childweights <- function (node, mf, weights) {
   partvar <- mf@get("part")
   xselect <- partvar[[node$psplit$variableID]]
-  if (class(node$psplit) == "orderedSplit") {
+  if (is(node$psplit, "orderedSplit")) {
     leftweights <- (as.double(xselect) <= node$psplit$splitpoint) * weights
     rightweights <- (as.double(xselect) > node$psplit$splitpoint) * weights
   }

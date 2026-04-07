@@ -1,9 +1,38 @@
 Package: mobForest
 Type: Package
 Title: Model Based Random Forest Analysis
-Version: 1.3.1
-Date: 2019-07-31
-Author: Nikhil Garge [aut], Barry Eggleston [aut], Georgiy Bobashev [aut], Benjamin Carper [cre], Kasey Jones [ctb, cre], Torsten Hothorn [ctb], Kurt Hornik [ctb], Carolin Strobl [ctb], Achim Zeileis [ctb]
+Version: 1.3.2
+Authors@R: c(person(given = "Nikhil",
+                   family = "Garge",
+                   role = "aut"),
+            person(given = "Barry",
+                   family = "Eggleston",
+                   role = "aut"),
+            person(given = "Georgiy",
+                   family = "Bobashev",
+                   role = "aut"),
+            person(given = "Benjamin",
+                   family = "Carper",
+                   role = "cre"),
+            person(given = "Kasey",
+                   family = "Jones",
+                   role = c("ctb", "cre"),
+                   email = "krjones@rti.org"),
+            person(given = "Torsten",
+                   family = "Hothorn",
+                   role = "ctb"),
+            person(given = "Kurt",
+                   family = "Hornik",
+                   role = "ctb"),
+            person(given = "Carolin",
+                   family = "Strobl",
+                   role = "ctb"),
+            person(given = "Achim",
+                   family = "Zeileis",
+                   role = "ctb"),
+            person(given = "Christos",
+                   family = "Adam",
+                   role = "ctb"))
 Maintainer: Kasey Jones <krjones@rti.org>
 Description: Functions to implements random forest method for model based
     recursive partitioning. The mob() function, developed by Zeileis et al. (2008),

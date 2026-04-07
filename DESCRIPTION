@@ -28,4 +28,5 @@ Suggests:
     testthat (>= 1.0.2),
     mlbench (>= 2.1),
     lattice
-RoxygenNote: 6.1.1
+RoxygenNote: 7.3.3
+Encoding: UTF-8
